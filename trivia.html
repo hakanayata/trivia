@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="trivia.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // TODO: Add code to check answers to questions
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // multiple choice
+            let correct_ans = document.querySelector('.correct');
+            let wrong_answers = document.querySelectorAll('.wrong');
+            correct_ans.addEventListener('click', function () {
+                correct_ans.style.backgroundColor = 'green';
+                document.querySelector('.result1').innerHTML = 'Correct ✅';
+
+            });
+
+            for (let i = 0; i < wrong_answers.length; i++) {
+                wrong_answers[i].addEventListener('click', function () {
+                    wrong_answers[i].style.backgroundColor = 'red';
+                    document.querySelector('.result1').innerHTML = 'Incorrect ❌';
+                });
+            }
+
+            // free response
+            let check_btn = document.querySelector('.check_btn');
+
+            check_btn.addEventListener('click', function () {
+                let free_res = document.querySelector('.free_res');
+                if (free_res.value === 'CS50') {
+                    check_btn.style.backgroundColor = 'green';
+                    document.querySelector('.result2').innerHTML = 'Correct ✅';
+                }
+                else {
+                    check_btn.style.backgroundColor = 'red';
+                    document.querySelector('.result2').innerHTML = 'Incorrect ❌';
+                }
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice</h2>
+            <hr>
+            <!-- TODO: Add multiple choice question here -->
+            <h3>What is the circumference of the Earth?</h3>
+            <button class="wrong">10k km</button>
+            <button class="wrong">20k km</button>
+            <button class="wrong">30k km</button>
+            <button class="correct">40k km</button>
+            <p class="result1"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <!-- TODO: Add free response question here -->
+            <h3>Which course is this?</h3>
+            <input class="free_res" type="text">
+            <button class="check_btn">Check My Answer</button>
+            <p class="result2"></p>
+        </div>
+    </div>
+</body>
+
+</html>
