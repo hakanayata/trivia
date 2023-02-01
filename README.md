@@ -1,6 +1,6 @@
 # Trivia
 
-## Demo: [Netlify](trivia-hakan.netlify.app)
+## Demo: [Netlify](https://trivia-hakan.netlify.app)
 
 
 ### Description
